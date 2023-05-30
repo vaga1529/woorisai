@@ -53,7 +53,7 @@
 
           <button class="download-btn">다운로드</button>
         </div>
-        <img src="images/main1.png" alt="앱 배너 이미지" class="hero-image" />
+        <img src="images/main.png" alt="앱 배너 이미지" class="hero-image" />
       </div>
     </header>
     <main>
@@ -77,20 +77,28 @@
 
       <section class="use-cases">
         <h1>사용 사례</h1>
-        <div class="use-case">
-          <img src="use-case1.jpg" alt="사용 사례1" />
-          <h2>사용 사례1</h2>
-          <p>앱을 어떻게 사용할 수 있는지 설명하는 문구입니다.</p>
-        </div>
-        <div class="use-case">
-          <img src="use-case2.jpg" alt="사용 사례2" />
-          <h2>사용 사례2</h2>
-          <p>앱을 어떻게 사용할 수 있는지 설명하는 문구입니다.</p>
-        </div>
-        <div class="use-case">
-          <img src="use-case3.jpg" alt="사용 사례3" />
-          <h2>사용 사례3</h2>
-          <p>앱을 어떻게 사용할 수 있는지 설명하는 문구입니다.</p>
+        <div class="slider">
+          <div class="card-slide active">
+            <div class="card">
+              <img src="images/use-case1.jpg" alt="사용 사례1" />
+              <h2>놀이공원여행</h2>
+              <p>빙글 빙글 놀이공원 의자를 타고 하늘을 날아다니는....</p>
+            </div>
+          </div>
+          <div class="card-slide">
+            <div class="card">
+              <img src="images/use-case2.jpg" alt="사용 사례2" />
+              <h2>바다와 남자</h2>
+              <p>해변에 앉아 오늘 하루를 사색하는 남자의 뒷모습....</p>
+            </div>
+          </div>
+          <div class="card-slide">
+            <div class="card">
+              <img src="images/use-case3.jpg" alt="사용 사례3" />
+              <h2>벗꽃 열차</h2>
+              <p>벛꽃이 만발한 기차길에 조용히 기차 한대가 지나가.....</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -224,5 +232,20 @@
     </footer>
 
     <script src="main.js"></script>
+    <script>
+      ;(function autoSlide() {
+        const slides = document.querySelectorAll('.slide')
+        const totalSlides = slides.length
+        let currentSlide = 0
+
+        function slideShow() {
+          slides.forEach((slide) => slide.classList.remove('active'))
+          currentSlide = (currentSlide + 1) % totalSlides
+          slides[currentSlide].classList.add('active')
+        }
+
+        setInterval(slideShow, 3000) // 슬라이딩 시간 간격을 조절할 수 있습니다. (여기서는 3초로 설정하였습니다.)
+      })()
+    </script>
   </body>
 </html>

@@ -19,8 +19,8 @@ header {
 .header-wrapper {
   display: flex;
   justify-content: space-between;
-  background-color: #f2f2f2; /*상단 메뉴 배경색*/
   align-items: center;
+  background-color: #f2f2f2;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
@@ -32,7 +32,7 @@ header {
 
 /* 나머지 섹션과 헤더 사이 간격 조절 */
 .section-below-header {
-  padding-top: 70px; /* 헤더 높이에 따라 수정 */
+  padding-top: 60px; /* 기존 헤더 높이와 맞춰 조절 */
 }
 
 .logo a {
@@ -74,7 +74,7 @@ header {
   align-items: center;
   width: 100%;
   padding: 2rem;
-  height: calc(100vh - 60px); /* 헤더 높이가 60px이라고 가정합니다. */
+  min-height: calc(100vh - 1200px); /* 헤더 높이를 제외한 높이로 설정 */
   background: linear-gradient(135deg, #2064b1, #5dd0ff);
 }
 
@@ -108,7 +108,7 @@ header {
 }
 
 .hero-image {
-  width: 80%;
+  width: 100%;
   max-height: 100%;
   margin-right: 2rem;
 }
@@ -250,38 +250,52 @@ footer {
 /* 사용 사례 섹션 */
 .use-cases {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  padding: 2rem 1rem;
-  background-color: #f7f7f7;
+  text-align: center;
+  padding: 2rem;
 }
 
 .use-cases h1 {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.use-case {
-  width: 100%;
-  max-width: 350px;
-  padding: 1rem;
-  text-align: center;
-}
-
-.use-case img {
-  width: 100%;
-  height: auto;
+  font-size: 3rem;
   margin-bottom: 1rem;
 }
 
-@media screen and (min-width: 768px) {
-  .use-cases {
-    justify-content: space-between;
-  }
-  .use-case {
-    width: calc(33% - 2rem);
-  }
+.use-cases h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.slider {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card-slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 1.5rem;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
 /* 스크린샷 및 비디오 섹션 */
