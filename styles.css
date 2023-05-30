@@ -19,7 +19,7 @@ header {
 .header-wrapper {
   display: flex;
   justify-content: space-between;
-  background-color: #f2f2f2;
+  background-color: #f2f2f2; /*상단 메뉴 배경색*/
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
